@@ -192,6 +192,28 @@ p {
   border-radius: 4px;
 }
 
+#footer {
+  background-color: white;
+  padding: 16px;
+  border-radius: 4px;
+  margin-top: 4px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 16px;
+}
+
+.footer-container p {
+  font-size: 16px;
+  width: 30%;
+}
+
+#footer > span {
+  font-family: "Poppins", sans-serif;
+}
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
   .timeline {
