@@ -11,15 +11,36 @@
       href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
   </head>
   <body>
-    <nav id="navigation">
+    <button id="hamburger">☰</button>
+    <nav id="navigation" class="">
       <div><a href="#artifact-1">The Lidded ritual ewer</a></div>
       <div><a href="#artifact-2">The Square lidded ritual wine</a></div>
       <div><a href="#artifact-3">Buddha draped in robes</a></div>
       <div><a href="#artifact-4">The Buddha Amitabha</a></div>
       <div><a href="#artifact-5">Buddhas and Bodhisattvas</a></div>
     </nav>
+
+    <button class="audio" onclick="toggleAudio()">
+      <span id="playPauseButton" class="triangle"></span>
+      <!-- Triangle (Play) -->
+      <span id="stopButton" class="rectangle"></span>
+      <!-- Rectangle (Stop) -->
+    </button>
+
+    <audio id="audioElement">
+      <source
+        src="./audio/Museum - Religious and Culture.wav"
+        type="audio/wav"
+      />
+      Your browser does not support the audio element.
+    </audio>
+
     <main>
       <div id="hero-section">
         <div class="hero-container">
@@ -105,6 +126,92 @@
                 though their meanings remain uncertain, likely held ritualistic
                 and symbolic importance within Shang beliefs and ceremonies.
               </p>
+              <model-viewer
+                src="./assets/3dmodel/Dragon-aero.glb"
+                ar
+                ar-modes="webxr scene-viewer quick-look"
+                camera-controls
+                tone-mapping="neutral"
+                poster="poster.webp"
+                shadow-intensity="1"
+              >
+                <button
+                  class="Hotspot"
+                  slot="hotspot-1"
+                  data-position="0.04515371424765857m 0.08160658764180301m 0.042817018403826346m"
+                  data-normal="0.9515334640779098m 0.19731348504218815m 0.23590560688631254m"
+                  data-visibility-attribute="visible"
+                >
+                  <div class="HotspotAnnotation">A snake pattern</div></button
+                ><button
+                  class="Hotspot"
+                  slot="hotspot-2"
+                  data-position="0.031422897652173765m 0.22288873706365783m 0.06539516089404818m"
+                  data-normal="0.9338338218319207m 0.2816125661806381m -0.22056462946706676m"
+                  data-visibility-attribute="visible"
+                >
+                  <div class="HotspotAnnotation">a dragon pattern</div></button
+                ><button
+                  class="Hotspot"
+                  slot="hotspot-3"
+                  data-position="-0.03227958682712706m 0.18103585324169558m 0.10953235591039245m"
+                  data-normal="-0.6882174469624572m -0.7098281991909269m -0.1500022444160202m"
+                  data-visibility-attribute="visible"
+                >
+                  <div class="HotspotAnnotation">a fish pattern</div></button
+                ><button
+                  class="Hotspot"
+                  slot="hotspot-4"
+                  data-position="-0.00033679072961345733m 0.22154869739514316m -0.03436895644876636m"
+                  data-normal="0.21188801729840545m 0.9360717457096901m -0.2808436486897363m"
+                  data-visibility-attribute="visible"
+                >
+                  <div class="HotspotAnnotation">A buffalo pattern</div></button
+                ><button
+                  class="Hotspot"
+                  slot="hotspot-5"
+                  data-position="-0.0070549581948970656m 0.1709509956101556m -0.09793468837817537m"
+                  data-normal="-0.5780328426004578m -0.022334556586843773m -0.8157077910975863m"
+                  data-visibility-attribute="visible"
+                >
+                  <div class="HotspotAnnotation">A goat pattern</div></button
+                ><button
+                  class="Hotspot"
+                  slot="hotspot-6"
+                  data-position="0.00761695378496019m 0.11706084572127173m -0.11136163211036733m"
+                  data-normal="0.9043014249777424m 0.257904327780787m -0.34018273103607877m"
+                  data-visibility-attribute="visible"
+                >
+                  <div class="HotspotAnnotation">a bird pattern</div></button
+                ><button
+                  class="Hotspot"
+                  slot="hotspot-7"
+                  data-position="-0.007874103447238549m 0.27063555710842796m 0.147121908038633m"
+                  data-normal="0.12535544088044911m 0.5604666868372986m 0.8186349042077852m"
+                  data-visibility-attribute="visible"
+                >
+                  <div class="HotspotAnnotation">a horn beast</div></button
+                ><button
+                  class="Hotspot"
+                  slot="hotspot-8"
+                  data-position="0.03909938159300963m 0.06479324926417063m -0.04186012303833109m"
+                  data-normal="-0.1570933036073631m -0.641227917821675m -0.7510981636030034m"
+                  data-visibility-attribute="visible"
+                >
+                  <div class="HotspotAnnotation">A human pattern</div>
+                </button>
+                <div class="progress-bar hide" slot="progress-bar">
+                  <div class="update-bar"></div>
+                </div>
+                <button slot="ar-button" id="ar-button">
+                  View in your space
+                </button>
+                <div id="ar-prompt">
+                  <img
+                    src="https://modelviewer.dev/shared-assets/icons/hand.png"
+                  />
+                </div>
+              </model-viewer>
             </div>
           </div>
           <div class="artifact-description">
@@ -135,6 +242,60 @@
                 during the reign of the fourth Zhou king, showcasing both its
                 artistic and historical significance.
               </p>
+              <model-viewer
+                src="./assets/3dmodel/wine-aero.glb"
+                ar
+                ar-modes="webxr scene-viewer quick-look"
+                camera-controls
+                tone-mapping="neutral"
+                poster="poster.webp"
+                shadow-intensity="1"
+              >
+                <button
+                  class="Hotspot"
+                  slot="hotspot-1"
+                  data-position="0.07244437741948295m 0.22148116055130224m 0.02241629967716252m"
+                  data-normal="0.8351237313238099m 0.5489688359614716m 0.03466367728479012m"
+                  data-visibility-attribute="visible"
+                >
+                  <div class="HotspotAnnotation">A lid</div></button
+                ><button
+                  class="Hotspot"
+                  slot="hotspot-2"
+                  data-position="0.018369498690505748m 0.3268102902634745m -0.003333497619083442m"
+                  data-normal="0.854198428116642m 0.4840364924651265m 0.1898781697960979m"
+                  data-visibility-attribute="visible"
+                >
+                  <div class="HotspotAnnotation">A knob</div></button
+                ><button
+                  class="Hotspot"
+                  slot="hotspot-3"
+                  data-position="0.10337727672920227m 0.15158737662541472m -0.00816157554085506m"
+                  data-normal="0.7804885292915026m 0.2596500061283289m -0.5686998592948185m"
+                  data-visibility-attribute="visible"
+                >
+                  <div class="HotspotAnnotation">A rat mask</div></button
+                ><button
+                  class="Hotspot"
+                  slot="hotspot-4"
+                  data-position="0.08059455142671723m 0.06665836358329941m -0.025135564574737812m"
+                  data-normal="0.833879956036682m -0.281623112742683m 0.47469215423196465m"
+                  data-visibility-attribute="visible"
+                >
+                  <div class="HotspotAnnotation">A container</div>
+                </button>
+                <div class="progress-bar hide" slot="progress-bar">
+                  <div class="update-bar"></div>
+                </div>
+                <button slot="ar-button" id="ar-button">
+                  View in your space
+                </button>
+                <div id="ar-prompt">
+                  <img
+                    src="https://modelviewer.dev/shared-assets/icons/hand.png"
+                  />
+                </div>
+              </model-viewer>
             </div>
           </div>
           <div class="artifact-description">
@@ -152,27 +313,68 @@
                 Buddha draped in robes portraying the Realms of Existence:
               </h3>
               <p>
-                This is a larger-than-life statue carved from stone during the
-                Northern Qi dynasty (550-577 C.E.) in northern China. Although
-                the head and hands are missing, the remaining sculpture depicts
-                a standing figure wearing a monk's robe. Intricate carvings
-                cover the entire robe, and the front depicts a symbolic map of
-                the Buddhist universe, called the Realms of Existence. Starting
-                from the top, the carvings depict a hierarchy of realms:
-                divinities, Mount Meru (the center of the universe), demigods,
-                humans, animals, spirits, and lastly, sufferers in Buddhist
-                hells. The back of the robe shows a similar hierarchy of heaven
-                above earth, and the sleeves feature stories about the past
-                lives of Shakyamuni Buddha, the historical Buddha, and the
-                concept of merit and rebirth. The detailed and organized
-                carvings are not merely decorative patterns but represent
-                Vairochana Buddha, the Cosmic Buddha. Buddhist texts describe
-                Vairochana as the force behind all phenomena in the Buddhist
-                universe, and these scenes are thought to be spiritual
-                emanations rising from the Buddha. This sculpture may have been
-                created to teach the basic tenets of Buddhism to those who could
-                not read
+                This stone statue from China’s Northern Qi dynasty (550–577
+                C.E.) depicts a monk in a carved robe, though its head and hands
+                are missing. On the front, the robe maps the Buddhist universe:
+                divinities at the top, humans, animals, and spirits in the
+                middle, and Buddhist hells at the bottom, with Mount Meru
+                standing central, flanked by dragons and demigods. The back
+                mirrors this cosmic hierarchy, emphasizing the heavens above the
+                earthly realms. The sleeves feature scenes from Shakyamuni
+                Buddha’s past lives, illustrating the principles of rebirth and
+                merit. Despite its incomplete form, the statue embodies the
+                artistry and spiritual vision of the Northern Qi era.
               </p>
+              <model-viewer
+                src="./assets/3dmodel/buddha-aero.glb"
+                ar
+                ar-modes="webxr scene-viewer quick-look"
+                camera-controls
+                tone-mapping="neutral"
+                poster="poster.webp"
+                shadow-intensity="1"
+              >
+                <button
+                  class="Hotspot"
+                  slot="hotspot-1"
+                  data-position="0.021762949312406077m 1.1450858448265402m -0.1710218413763105m"
+                  data-normal="0.02362750364799129m 0.004521997624193013m -0.9997106044295275m"
+                  data-visibility-attribute="visible"
+                >
+                  <div class="HotspotAnnotation">Realm of heaven</div></button
+                ><button
+                  class="Hotspot"
+                  slot="hotspot-2"
+                  data-position="0.29422214248218026m 0.840245810656973m -0.023232701693204905m"
+                  data-normal="0.9923464826890319m -0.11983497510962357m 0.029799950254707875m"
+                  data-visibility-attribute="visible"
+                >
+                  <div class="HotspotAnnotation">
+                    Story of Shakyamuni Buddha
+                  </div></button
+                ><button
+                  class="Hotspot"
+                  slot="hotspot-4"
+                  data-position="0.010996712243855511m 1.4495640709814215m 0.0023830155263095953m"
+                  data-normal="0.00865849799988566m 0.592031885311206m 0.8058680271528613m"
+                  data-visibility-attribute="visible"
+                >
+                  <div class="HotspotAnnotation">
+                    Realm of divinities of Buddha
+                  </div>
+                </button>
+                <div class="progress-bar hide" slot="progress-bar">
+                  <div class="update-bar"></div>
+                </div>
+                <button slot="ar-button" id="ar-button">
+                  View in your space
+                </button>
+                <div id="ar-prompt">
+                  <img
+                    src="https://modelviewer.dev/shared-assets/icons/hand.png"
+                  />
+                </div>
+              </model-viewer>
             </div>
           </div>
           <div class="artifact-description">
@@ -188,22 +390,54 @@
             <div>
               <h3>Western Paradise of the Buddha Amitabha:</h3>
               <p>
-                The **Western Paradise relief** and the **Cosmic Buddha statue**
-                are both examples of Buddhist art from the Northern Qi dynasty,
-                a period when Buddhism flourished in China with support from the
-                imperial family and various social classes. Both sculptures are
-                large and intricately carved, indicating the sophistication of
-                Buddhist art during this time, likely due to this support. The
-                Western Paradise relief, with its depiction of Amitabha and the
-                Pure Land, aimed to inspire faith in viewers, promising rebirth
-                in a realm of bliss. Similarly, the Cosmic Buddha statue, with
-                its detailed carvings of the Realms of Existence, might have
-                been used in a monastery to visually communicate Buddhist
-                teachings, particularly to those who could not read. Both
-                artworks, originally situated in cave temples, served as
-                powerful visual representations of Buddhist concepts, promoting
-                faith and understanding of Buddhist cosmology and principles.
+                The Western Paradise, or Pure Land, is Amitabha Buddha’s
+                heavenly realm of peace and beauty, with jewel trees and
+                heavenly music. Faith in Amitabha ensures rebirth in this
+                blissful land. An eleven-foot stone relief from Cave 2 at
+                Xiangtangshan shows Amitabha welcoming souls reborn from lotus
+                blossoms, the earliest known depiction of the Pure Land in
+                Chinese art. Created in the sixth century with royal support,
+                the cave’s sculptures and carvings immersed worshippers in the
+                vision of Amitabha’s divine realm.
               </p>
+              <model-viewer
+                src="./assets/3dmodel/western-aero.glb"
+                ar
+                ar-modes="webxr scene-viewer quick-look"
+                camera-controls
+                tone-mapping="neutral"
+                poster="poster.webp"
+                shadow-intensity="1"
+              >
+                <button
+                  class="Hotspot"
+                  slot="hotspot-1"
+                  data-position="0.011433681814352743m 0.1276072915225025m 0.001848290944208686m"
+                  data-normal="0.06143478733905112m 0.11606749829465877m 0.9913395496721721m"
+                  data-visibility-attribute="visible"
+                >
+                  <div class="HotspotAnnotation">A Pure Land</div></button
+                ><button
+                  class="Hotspot"
+                  slot="hotspot-3"
+                  data-position="0.04739743039825177m 0.09704290513627686m 0.00033653762070817717m"
+                  data-normal="-0.18509619421924062m 0.19074148787153225m 0.9640316818912682m"
+                  data-visibility-attribute="visible"
+                >
+                  <div class="HotspotAnnotation">Jewel Tree</div>
+                </button>
+                <div class="progress-bar hide" slot="progress-bar">
+                  <div class="update-bar"></div>
+                </div>
+                <button slot="ar-button" id="ar-button">
+                  View in your space
+                </button>
+                <div id="ar-prompt">
+                  <img
+                    src="https://modelviewer.dev/shared-assets/icons/hand.png"
+                  />
+                </div>
+              </model-viewer>
             </div>
           </div>
           <div class="artifact-description">
@@ -219,15 +453,67 @@
             <div>
               <h3>Gathering of Buddhas and Bodhisattvas:</h3>
               <p>
-                The Gathering of Buddhas and Bodhisattvas, a large limestone
-                relief from the Northern Qi dynasty, depicts an assembly of
-                Buddhas, bodhisattvas, and blessed souls amidst jeweled trees
-                and lush landscapes. Originally adorned with vibrant colors and
-                gold accents, traces of pigment hint at its former brilliance.
-                Scholars believe this mural once decorated a stupa-pillar within
-                Cave 2 at Southern Xiangtangshan, a renowned Buddhist cave
-                temple complex.
+                The Gathering of Buddhas and Bodhisattvas, a limestone relief
+                from the Northern Qi dynasty (550–577), once adorned Cave 2 at
+                the Southern Xiangtangshan cave temples in Hebei, China. This
+                mural depicts a celestial assembly of Buddhas, bodhisattvas
+                (enlightened beings), and blessed souls, likely set in one of
+                the four directional Buddhist paradises. Surrounded by jeweled
+                trees and lush scenery, the mural’s traces of gold and bright
+                colors hint at its original brilliance. It likely decorated a
+                stupa-pillar, a central feature of the cave. Removed before 1920
+                due to damage and theft, the mural was acquired by the Freer
+                Gallery of Art between 1921 and 1922, preserving this
+                significant piece of Buddhist art.
               </p>
+              <model-viewer
+                src="./assets/3dmodel/gathering-aero.glb"
+                ar
+                ar-modes="webxr scene-viewer quick-look"
+                camera-controls
+                tone-mapping="neutral"
+                poster="poster.webp"
+                shadow-intensity="1"
+              >
+                <button
+                  class="Hotspot"
+                  slot="hotspot-1"
+                  data-position="-0.0006304051684743635m 0.044993606559653294m -0.001429038139404426m"
+                  data-normal="-0.06354976718811947m -0.2161850299074702m 0.9742820227912665m"
+                  data-visibility-attribute="visible"
+                >
+                  <div class="HotspotAnnotation">Buddha</div></button
+                ><button
+                  class="Hotspot"
+                  slot="hotspot-2"
+                  data-position="-0.08066031936357279m 0.06791087770494679m 0.0016866659760013114m"
+                  data-normal="0.4245459997249844m 0.03312418883020639m 0.9048002443809653m"
+                  data-visibility-attribute="visible"
+                >
+                  <div class="HotspotAnnotation">
+                    Enlightened bodhisattvas
+                  </div></button
+                ><button
+                  class="Hotspot"
+                  slot="hotspot-3"
+                  data-position="0.09318432010145732m 0.070707847099242m -0.0013452121672743456m"
+                  data-normal="-0.0011825489158265397m 0.026154797820446614m 0.999657205310417m"
+                  data-visibility-attribute="visible"
+                >
+                  <div class="HotspotAnnotation">Blessed souls</div>
+                </button>
+                <div class="progress-bar hide" slot="progress-bar">
+                  <div class="update-bar"></div>
+                </div>
+                <button slot="ar-button" id="ar-button">
+                  View in your space
+                </button>
+                <div id="ar-prompt">
+                  <img
+                    src="https://modelviewer.dev/shared-assets/icons/hand.png"
+                  />
+                </div>
+              </model-viewer>
             </div>
           </div>
           <div class="artifact-description">
@@ -246,11 +532,11 @@
           Ratchapon Ngamdan created this website for the assignment from
           Advanced Multimedia Technology.
         </p>
-        <!-- <p>
+        <p>
           Content from this website was generated from generative AI, the
-          structure and contents from NotebookLM and contents from ChatGPT. As to experience
-          learning with the artificial intelligence.
-        </p> -->
+          structure and contents from NotebookLM and contents summarize from
+          ChatGPT. As to experience learning with the artificial intelligence.
+        </p>
       </div>
       <span>©️ 2024 Ratchapon Ngamdan</span>
     </footer>
