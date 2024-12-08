@@ -112,7 +112,7 @@ model-viewer > button {
 }
 
 #hero-section {
-  background-image: url(./assets/Hero-Camera.png);
+  background-image: url(./assets/images/Hero-Camera.png);
   height: 100vh;
   padding: 0 0;
   background-size: cover;
