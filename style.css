@@ -17,15 +17,23 @@ p {
   font-family: "Poppins", sans-serif;
   line-height: 150%;
 }
-
-.audio {
+.audio-container {
   position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 1000;
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  align-items: center;
+  gap: 24px;
+}
+.audio {
   height: 80px;
   width: 80px;
   border-radius: 100%;
   background-color: #b1062e;
-  bottom: 16px;
-  right: 16px;
+
   z-index: 1000;
   display: flex;
   justify-content: center;
@@ -337,19 +345,20 @@ header {
   body {
     padding: 8px;
   }
+  .audio-container {
+    gap: 8px;
+    bottom: 16px;
+    right: 8px;
+  }
   .audio {
     height: 50px;
     width: 50px;
   }
-  .triangle {
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 15px solid white; /* Change color as needed */
+  #audioStateText {
+    color: white;
+    font-size: 14px;
   }
-  .rectangle {
-    width: 20px;
-    height: 20px;
-  }
+
   #hamburger {
     display: block;
   }

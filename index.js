@@ -1,6 +1,8 @@
 const audioPlayer = document.getElementById("audioElement");
 const playPauseButton = document.getElementById("playPauseButton");
 const audioStateText = document.getElementById("audioStateText");
+const hamburger = document.getElementById("hamburger");
+const navigation = document.getElementById("navigation");
 
 function toggleAudio() {
   if (audioPlayer.paused) {
@@ -13,7 +15,6 @@ function toggleAudio() {
     audioStateText.textContent = "Play";
   }
 }
-
 audioPlayer.addEventListener("ended", function () {
   playPauseButton.classList.remove("playing");
   audioStateText.textContent = "Play";
@@ -21,5 +22,5 @@ audioPlayer.addEventListener("ended", function () {
 
 hamburger.addEventListener("click", () => {
   navigation.classList.toggle("active"); // Toggle visibility
-  // console.log("cliock");
+  console.log("click");
 });

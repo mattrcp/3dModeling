@@ -31,20 +31,19 @@
         experiment and learn with GenAI only.*
       </p>
     </header>
-
-    <button class="audio" onclick="toggleAudio()">
-      <span id="playPauseButton" class="play-button">
-        <span id="audioStateText">Play</span>
-      </span>
-    </button>
-
-    <audio id="audioElement">
-      <source
-        src="./audio/Museum - Religious and Culture.wav"
-        type="audio/wav"
-      />
-      Your browser does not support the audio element.
-    </audio>
+    <div class="audio-container">
+      <audio id="audioElement" controls>
+        <source
+          src="./audio/Museum - Religious and Culture.wav"
+          type="audio/wav"
+        />
+        Your browser does not support the audio element.</audio
+      ><button class="audio" onclick="toggleAudio()">
+        <span id="playPauseButton" class="play-button">
+          <span id="audioStateText">Play</span>
+        </span>
+      </button>
+    </div>
 
     <main>
       <div id="hero-section">
