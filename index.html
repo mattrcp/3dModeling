@@ -17,20 +17,25 @@
     ></script>
   </head>
   <body>
-    <button id="hamburger">☰</button>
-    <nav id="navigation" class="">
-      <div><a href="#artifact-1">The Lidded ritual ewer</a></div>
-      <div><a href="#artifact-2">The Square lidded ritual wine</a></div>
-      <div><a href="#artifact-3">Buddha draped in robes</a></div>
-      <div><a href="#artifact-4">The Buddha Amitabha</a></div>
-      <div><a href="#artifact-5">Buddhas and Bodhisattvas</a></div>
-    </nav>
+    <header>
+      <button id="hamburger">☰</button>
+      <nav id="navigation" class="">
+        <div><a href="#artifact-1">The Lidded ritual ewer</a></div>
+        <div><a href="#artifact-2">The Square lidded ritual wine</a></div>
+        <div><a href="#artifact-3">Buddha draped in robes</a></div>
+        <div><a href="#artifact-4">The Buddha Amitabha</a></div>
+        <div><a href="#artifact-5">Buddhas and Bodhisattvas</a></div>
+      </nav>
+      <p class="purpose">
+        *The content from this website was created by GenAI. The purpose is to
+        experiment and learn with GenAI only.*
+      </p>
+    </header>
 
     <button class="audio" onclick="toggleAudio()">
-      <span id="playPauseButton" class="triangle"></span>
-      <!-- Triangle (Play) -->
-      <span id="stopButton" class="rectangle"></span>
-      <!-- Rectangle (Stop) -->
+      <span id="playPauseButton" class="play-button">
+        <span id="audioStateText">Play</span>
+      </span>
     </button>
 
     <audio id="audioElement">
@@ -526,11 +531,6 @@
         <p>
           Ratchapon Ngamdan created this website for the assignment from
           Advanced Multimedia Technology.
-        </p>
-        <p>
-          Content from this website was generated from generative AI, the
-          structure and contents from NotebookLM and contents summarize from
-          ChatGPT. As to experience learning with the artificial intelligence.
         </p>
       </div>
       <span>©️ 2024 Ratchapon Ngamdan</span>

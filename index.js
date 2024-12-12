@@ -1,27 +1,22 @@
-// Fix: Corrected audio player ID to match the HTML
 const audioPlayer = document.getElementById("audioElement");
 const playPauseButton = document.getElementById("playPauseButton");
-const stopButton = document.getElementById("stopButton");
-const hamburger = document.getElementById("hamburger");
-const navigation = document.getElementById("navigation");
+const audioStateText = document.getElementById("audioStateText");
 
-// Function to toggle play/pause and shapes
 function toggleAudio() {
   if (audioPlayer.paused) {
     audioPlayer.play();
-    playPauseButton.style.display = "none"; // Hide play triangle
-    stopButton.style.display = "block"; // Show stop rectangle
+    playPauseButton.classList.add("playing");
+    audioStateText.textContent = "Stop";
   } else {
     audioPlayer.pause();
-    playPauseButton.style.display = "block"; // Show play triangle
-    stopButton.style.display = "none"; // Hide stop rectangle
+    playPauseButton.classList.remove("playing");
+    audioStateText.textContent = "Play";
   }
 }
 
-// Automatically hide the stop rectangle when the audio ends
 audioPlayer.addEventListener("ended", function () {
-  playPauseButton.style.display = "block"; // Show play triangle
-  stopButton.style.display = "none"; // Hide stop rectangle
+  playPauseButton.classList.remove("playing");
+  audioStateText.textContent = "Play";
 });
 
 hamburger.addEventListener("click", () => {
